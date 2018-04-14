@@ -37,7 +37,7 @@ services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
     
 
             services.AddDbContext<DBservice>(options =>
-            options.UseSqlServer("Data Source=Media.ruppin.ac.il;Initial Catalog=igroup82_test2;User ID=igroup82;Password=igroup82_18350"));
+            options.UseSqlServer("Data Source=82.166.189.73;Initial Catalog=igroup82_test2;User ID=igroup82;Password=igroup82_18350"));
             services.AddMvc();
         }
 

@@ -12541,11 +12541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/raviv/Desktop/project/tmanagment-mobile-server/MobileTmanaGment.csproj",
+      "projectUniqueName": "/Users/raviv/Desktop/project/server/tmanagment-mobile-server/MobileTmanaGment.csproj",
       "projectName": "MobileTmanaGment",
-      "projectPath": "/Users/raviv/Desktop/project/tmanagment-mobile-server/MobileTmanaGment.csproj",
+      "projectPath": "/Users/raviv/Desktop/project/server/tmanagment-mobile-server/MobileTmanaGment.csproj",
       "packagesPath": "/Users/raviv/.nuget/packages/",
-      "outputPath": "/Users/raviv/Desktop/project/tmanagment-mobile-server/obj/",
+      "outputPath": "/Users/raviv/Desktop/project/server/tmanagment-mobile-server/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
