@@ -1,0 +1,5 @@
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server
+--output-path=obj/Release/netcoreapp2.0/
+--application-name=MobileTmanaGment
+--content-root=/Users/raviv/Desktop/project/server/tmanagment-mobile-server
+--file=

@@ -1,0 +1,10 @@
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/bin/Release/netcoreapp2.0/MobileTmanaGment.deps.json
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/bin/Release/netcoreapp2.0/MobileTmanaGment.runtimeconfig.json
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/bin/Release/netcoreapp2.0/MobileTmanaGment.runtimeconfig.dev.json
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/bin/Release/netcoreapp2.0/MobileTmanaGment.dll
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/bin/Release/netcoreapp2.0/MobileTmanaGment.pdb
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/obj/Release/netcoreapp2.0/MobileTmanaGment.csproj.CoreCompileInputs.cache
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/obj/Release/netcoreapp2.0/MobileTmanaGment.AssemblyInfoInputs.cache
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/obj/Release/netcoreapp2.0/MobileTmanaGment.AssemblyInfo.cs
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/obj/Release/netcoreapp2.0/MobileTmanaGment.dll
+/Users/raviv/Desktop/project/server/tmanagment-mobile-server/obj/Release/netcoreapp2.0/MobileTmanaGment.pdb
