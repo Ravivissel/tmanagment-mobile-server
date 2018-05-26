@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors;
 using Newtonsoft.Json;
+using System;
 
 namespace RequestsApi.Controllers
 {
@@ -26,14 +27,20 @@ namespace RequestsApi.Controllers
             }
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
+            try{
             var result = _context.Requests.ToList();
             if (!result.Any())
             {
                 return NotFound(result);
             }
             return Ok(result);
+            }
+            catch(Exception e)
+            {
+                 return StatusCode(500, "exception: " + e);
+            }
         }
         [HttpGet("{id:int}")]
         public List<Request> Get(int id)
@@ -44,11 +51,11 @@ namespace RequestsApi.Controllers
         }
 
         [HttpPut]
-        public JsonResult PutRequest([FromBody]Request request)
+        public ActionResult PutRequest([FromBody]Request request)
         {
             if (request == null)
             {
-                throw new System.ArgumentNullException(nameof(request));
+                return BadRequest("request is null");
             }
 
             try
@@ -66,7 +73,7 @@ namespace RequestsApi.Controllers
             }
             catch (DbUpdateException DbUpdateException)
             {
-                return Json(DbUpdateException);
+                 return StatusCode(500, "exception: " + DbUpdateException);
 
             }
 

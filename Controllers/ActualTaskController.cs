@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using ActualTasks.Models;
 using DBServices.Models;
+using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace ActualTasksApi.Controllers
 {
@@ -27,6 +29,23 @@ namespace ActualTasksApi.Controllers
 
             return value.ToList();
         }
+
+        [HttpPost()]
+        public ActionResult InsetActualTask([FromBody]ActualTask actualTask)
+        {
+            try
+            {
+                _context.Entry(actualTask).State = actualTask.Id == 0? EntityState.Added : EntityState.Modified;
+                _context.SaveChanges();
+                return Ok("Task added");
+            }
+            catch (Exception e)
+            {
+                 return StatusCode(500, "exception: " + e);
+
+            }
+        }
+
 
     }
 }

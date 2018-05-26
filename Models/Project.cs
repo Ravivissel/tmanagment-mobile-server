@@ -28,7 +28,7 @@ namespace Projects.Models
         [Column("start_date")] private DateTime start_date;
         [Column("end_date")] private DateTime end_date;
         [Column("contact_name")] private string contact_name;
-        [Column("contact_phone")] private int contact_phone;
+        [Column("contact_phone")] private string contact_phone;
         [Column("modified_at")] private DateTime modified_at;
         [Column("created_at")] private DateTime created_at;
         [ForeignKey("employees")] private int created_by;
@@ -51,7 +51,7 @@ namespace Projects.Models
             this.Priority_key = priority_key;
         }
 
-        public Project(int id, string title, string description, string priority_key, int request_id, int project_manager, DateTime start_date, DateTime end_date, string contact_name, int contact_phone, DateTime modified_at, DateTime created_at, int created_by)
+        public Project(int id, string title, string description, string priority_key, int request_id, int project_manager, DateTime start_date, DateTime end_date, string contact_name, string contact_phone, DateTime modified_at, DateTime created_at, int created_by)
         {
             Id = id;
             Title = title;
@@ -77,7 +77,7 @@ namespace Projects.Models
         public DateTime Start_date { get => start_date; set => start_date = value; }
         public DateTime End_date { get => end_date; set => end_date = value; }
         public string Contact_name { get => contact_name; set => contact_name = value; }
-        public int Contact_phone { get => contact_phone; set => contact_phone = value; }
+        public string Contact_phone { get => contact_phone; set => contact_phone = value; }
         public DateTime Modified_at { get => modified_at; set => modified_at = value; }
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public int Created_by { get => created_by; set => created_by = value; }

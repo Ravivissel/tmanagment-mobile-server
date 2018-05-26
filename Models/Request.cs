@@ -18,7 +18,7 @@ namespace Requests.Models
         [Column("title")] public string Title { get; set; }
         [Column("description")] public string Description { get; set; }
         [Column("contact_name")] public string Contact_name { get; set; }
-        [Column("contact_phone")] public int Contact_phone { get; set; }
+        [Column("contact_phone")] public string Contact_phone { get; set; }
         [Column("created_at")] public DateTime Created_at { get; set; }
         [ForeignKey("employees")] int created_by { get; set; }
         [ForeignKey("employees")] int assign_to { get; set; }

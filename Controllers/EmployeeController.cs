@@ -4,6 +4,7 @@ using System.Linq;
 using Employees.Models;
 using DBServices.Models;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace EmployeesApi.Controllers
 {
@@ -32,25 +33,32 @@ namespace EmployeesApi.Controllers
 
         [Route("~/api/Login")]
         [AcceptVerbs("Get", "Post")]
-        public bool Login( [FromBody] Employee employee)
+        public ActionResult Login([FromBody] Employee employee)
         {
 
-            if (!string.IsNullOrEmpty(employee.User_name) && !string.IsNullOrEmpty(employee.Password))
+            try
             {
-                var user = (from emp in _context.Employees where emp.User_name == employee.User_name && emp.Password == employee.Password select emp).Any();
-
-                if (user)
+                if (!string.IsNullOrEmpty(employee.User_name) && !string.IsNullOrEmpty(employee.Password))
                 {
-                    return true;
+                    var user = (from emp in _context.Employees where emp.User_name == employee.User_name && emp.Password == employee.Password select emp).First();
+                    if (user!=null)
+                    {
+                        return Ok(user);
+                    }
+                    else
+                    {   
+                        return NotFound("User not found");
+                    }
                 }
                 else
                 {
-                    return false;
+                    return BadRequest();
                 }
             }
-            else
+            catch (Exception e)
             {
-                return false;
+
+                return StatusCode(500, "exception: " + e);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Employees.Models
         private int id;
         [Column("first_name")] private string first_name;
         [Column("last_name")] private string last_name;
-        [Column("phone_num")] private int phone_num;
+        [Column("phone_num")] private string phone_num;
         [Column("title")] private string title;
         [Column("user_name")] private string user_name;
         [Column("password")] private string password;
@@ -30,7 +30,7 @@ namespace Employees.Models
         public int Id { get => id; set => id = value; }
         public string First_name { get => first_name; set => first_name = value; }
         public string Last_name { get => last_name; set => last_name = value; }
-        public int Phone_num { get => phone_num; set => phone_num = value; }
+        public string Phone_num { get => phone_num; set => phone_num = value; }
         public string Title { get => title; set => title = value; }
         public string User_name { get => user_name; set => user_name = value; }
         public string Password { get => password; set => password = value; }

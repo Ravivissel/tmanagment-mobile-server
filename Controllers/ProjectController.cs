@@ -5,6 +5,8 @@ using Projects.Models;
 using DBServices.Models;
 using Microsoft.AspNetCore.Authorization;
 using Employees.Models;
+using System;
+using System.Net.Http;
 
 namespace ProjectsApi.Controllers
 {
@@ -31,8 +33,11 @@ namespace ProjectsApi.Controllers
         }
         [HttpPost]
         [Route("~/api/openProjects")]
-        public List<Project> GetOpenProjectsForUser([FromBody] Employee employee)
+        public ActionResult GetOpenProjectsForUser([FromBody] Employee employee)
         {
+
+            try{
+                
             var value = 
             from proj in _context.Projects 
             join apt in _context.ActualProjectsTasks on proj.Id equals apt.Project 
@@ -40,7 +45,13 @@ namespace ProjectsApi.Controllers
             join emp in _context.Employees on at.Assign_to equals emp.Id 
             where emp.Id==employee.Id select proj;
 
-            return value.ToList();
+            return Ok(value.ToList());
+            }
+            catch(Exception e){
+            Json(e);
+            return StatusCode(500);
+
+            }
         }
 
     }
